@@ -28,6 +28,7 @@ int communication( void ){
   }
   
   //Or,waiting for response.
+  
   responseLength = receiveModbusResponse( modbusResponse );
   
   if( responseLength == -1 ){
