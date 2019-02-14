@@ -4,10 +4,15 @@ It has two simple interfaces for user application.The first interface is sendMod
 The user application code is something like this:
 
 int communication( void ){
+
   int ret;
+  
   char *modbusRequest;
+  
   int requestLength;
+  
   char modbusResponse[256];//255 is the max length of modbus rtu frame.
+  
   int responseLength;
 
   //Here, do something to make the modbus request.
