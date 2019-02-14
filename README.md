@@ -5,41 +5,28 @@ The user application code is something like this:
 
 int communication( void ){
 
-  int ret;
-  
-  char *modbusRequest;
-  
-  int requestLength;
-  
-  char modbusResponse[256];//255 is the max length of modbus rtu frame.
-  
-  int responseLength;
-
-  //Here, do something to make the modbus request.
-  
-  ret = sendModbusRequest( modbusRequest, requestLength );
-  
-  //If there is some error.
-  
-  if( ret == -1 ){
-  
-    return;
+    int ret;
+    char *modbusRequest;
+    int requestLength;
+    char modbusResponse[256];//255 is the max length of modbus rtu frame.
+    int responseLength
     
-  }
+    //Here, do something to make the modbus request.
+    ....
+    ret = sendModbusRequest( modbusRequest, requestLength );
+    //If there is some error.
+    if( ret == -1 ){
+      return;
+    }
   
-  //Or,waiting for response.
+    //Or,waiting for response.
+    responseLength = receiveModbusResponse( modbusResponse );
+    if( responseLength == -1 ){
+      //Do something to handle the error
+      return;
+    }
   
-  responseLength = receiveModbusResponse( modbusResponse );
-  
-  if( responseLength == -1 ){
-  
-    //Do something to handle the error
-    
-    return;
-    
-  }
-  
-  //Or, go
+    //Or, go
   
 }
 
