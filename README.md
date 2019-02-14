@@ -17,7 +17,9 @@ int communication( void ){
   //If there is some error.
   
   if( ret == -1 ){
+  
     return;
+    
   }
   
   //Or,waiting for response.
@@ -28,6 +30,7 @@ int communication( void ){
     //Do something to handle the error
     
     return;
+    
   }
   
   //Or, go
