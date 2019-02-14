@@ -11,8 +11,11 @@ int communication( void ){
   int responseLength;
 
   //Here, do something to make the modbus request.
+  
   ret = sendModbusRequest( modbusRequest, requestLength );
+  
   //If there is some error.
+  
   if( ret == -1 ){
     return;
   }
@@ -21,12 +24,14 @@ int communication( void ){
   responseLength = receiveModbusResponse( modbusResponse );
   
   if( responseLength == -1 ){
+  
     //Do something to handle the error
     
     return;
   }
   
   //Or, go
+  
 }
 
 The project is written in C,it can run on any linux device.
